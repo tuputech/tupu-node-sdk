@@ -1,0 +1,26 @@
+{
+  "name": "tupu-node-sdk",
+  "version": "0.0.1",
+  "description": "node.js API sdk for api.open.tuputech.com ",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zouyixiong/tupu-node-sdk.git"
+  },
+  "keywords": [
+    "tupu"
+  ],
+  "author": "yixiongzou@tuputech.com",
+  "bugs": {
+    "url": "https://github.com/zouyixiong/tupu-node-sdk/issues"
+  },
+  "homepage": "https://github.com/zouyixiong/tupu-node-sdk",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "request": "^2.74.0",
+    "urllib": "^2.11.0"
+  }
+}
