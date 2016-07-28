@@ -1,3 +1,8 @@
+<a href="https://www.tuputech.com/">
+    <img src="https://www.tuputech.com/zh/images/brandpage/tuputech_logo_horizontal_black.png" alt="图普科技"
+         title="图普科技" align="right" />
+</a>
+
 ## TUPU API 调用流程
 
 #### 1、install tupu-node-sdk
@@ -37,7 +42,7 @@ tupu.byFiles(testFiles, function (data) {
 })
 
 ```
-TUPU API <a href="/tupu-node-sdk/out/TUPU.html">详细文档</a>
+TUPU API <a href="/out/TUPU.html">详细文档</a>
 
 ## for development
 
@@ -45,6 +50,6 @@ TUPU API <a href="/tupu-node-sdk/out/TUPU.html">详细文档</a>
 you need jsdoc installed global first
 
 ```bash
-jsdoc lib/ -R README.md
+jsdoc lib/
 ```
 
