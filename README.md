@@ -17,7 +17,7 @@ npm install --save tupu-node-sdk
 
 #### 3、sdk 调用示例
 
-```js
+```js 
 var secretId = 'you_secretId'
 var domain = 'api.open.tuputech.com'
 var privateKeyPath = __dirname + '/my_private_key.pem'
@@ -42,14 +42,39 @@ tupu.byFiles(testFiles, function (data) {
 })
 
 ```
-TUPU API <a href="/out/TUPU.html">详细文档</a>
 
-## for development
-
-#### generate docs
-you need jsdoc installed global first
-
-```bash
-jsdoc lib/
+## API 说明
+#### construct a TUPU API instance
+```js
+var tupu = new TUPU(domain, secretId, privateKeyPath, options)
 ```
+- `domain` TUPU API domain, e.g. 'API.open.tuputech.com', contact us for the other valid values
+- `secretId` your secretId, contact us to apply your own secretId
+- `privateKeyPath` /path/to/your/private/key.pem
+- `options` default: { timeout: 30 * 1000 }
+
+### Methods
+
+#### 1. call TUPU API by urls
+```js 
+tupu.byURLs(urls, cb) → {*}
+```
+- `urls`		[ 'http://sample.com/path/image.png', 'http://sample.com/path/images.zip' ]
+- `cb`		function(data) 'data' is a json, detail specification can be found [here](#https://www.tuputech.com/api/info).
+
+#### 2. call TUPU API by POST Files
+```js
+tupu.byFiles(files, cb) → {*}
+```
+- `files`		[ '/path/to/file1.jpg', '/path/to/file2.zip' ]
+- `cb`    	function(data) 'data' is a json, detail specification can be found [here](#https://www.tuputech.com/api/info).
+
+
+#### 3. call TUPU API by file streams
+```js 
+tupu.byStreams(streams, cb) → {*}
+```
+- `streams`		[ read stream1 , read stream2 ]
+- `cb`    	function(data) 'data' is a json, detail specification can be found [here](#https://www.tuputech.com/api/info).
+
 
