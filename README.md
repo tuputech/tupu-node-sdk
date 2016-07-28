@@ -60,14 +60,14 @@ var tupu = new TUPU(domain, secretId, privateKeyPath, options)
 tupu.byURLs(urls, cb) → {*}
 ```
 - `urls`		[ 'http://sample.com/path/image.png', 'http://sample.com/path/images.zip' ]
-- `cb`		function(data) 'data' is a json, detail specification can be found [here](#https://www.tuputech.com/api/info).
+- `cb`		function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 #### 2. call TUPU API by POST Files
 ```js
 tupu.byFiles(files, cb) → {*}
 ```
 - `files`		[ '/path/to/file1.jpg', '/path/to/file2.zip' ]
-- `cb`    	function(data) 'data' is a json, detail specification can be found [here](#https://www.tuputech.com/api/info).
+- `cb`    	function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 
 #### 3. call TUPU API by file streams
@@ -75,6 +75,6 @@ tupu.byFiles(files, cb) → {*}
 tupu.byStreams(streams, cb) → {*}
 ```
 - `streams`		[ read stream1 , read stream2 ]
-- `cb`    	function(data) 'data' is a json, detail specification can be found [here](#https://www.tuputech.com/api/info).
+- `cb`    	function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 
