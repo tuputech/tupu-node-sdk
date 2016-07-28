@@ -1,5 +1,3 @@
-<a href="/tupu-node-sdk/out/TUPU.html">详细文档</a>
-
 ## TUPU API 调用流程
 
 #### 1、install tupu-node-sdk
@@ -39,6 +37,7 @@ tupu.byFiles(testFiles, function (data) {
 })
 
 ```
+TUPU API <a href="/tupu-node-sdk/out/TUPU.html">详细文档</a>
 
 ## for development
 
