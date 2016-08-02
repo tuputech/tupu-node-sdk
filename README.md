@@ -22,7 +22,7 @@ var secretId = 'you_secretId'
 var domain = 'api.open.tuputech.com'
 var privateKeyPath = __dirname + '/my_private_key.pem'
 var TUPU = require('tupu-node-sdk')
-var tupu = new TUPU(domain, secretId, privateKeyPath)
+var tupu = new TUPU(secretId, privateKeyPath, { domain: domain, timeout: 10 * 1000 })
 
 var testUrls = [
     'http://sample.com/1469532933675594/953.jpg'
