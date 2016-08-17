@@ -46,12 +46,14 @@ tupu.byFiles(testFiles, function (data) {
 ## API 说明
 #### construct a TUPU API instance
 ```js
-var tupu = new TUPU(domain, secretId, privateKeyPath, options)
+var tupu = new TUPU(secretId, privateKeyPath, options)
 ```
-- `domain` TUPU API domain, e.g. 'API.open.tuputech.com', contact us for the other valid values
 - `secretId` your secretId, contact us to apply your own secretId
 - `privateKeyPath` /path/to/your/private/key.pem
-- `options` default: { timeout: 30 * 1000 }
+- `options` default: {
+                timeout: 30 * 1000
+                domain: 'api.open.tuputech.com' # contact us for the other valid values
+            }
 
 ### Methods
 
