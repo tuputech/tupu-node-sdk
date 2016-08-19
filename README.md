@@ -59,24 +59,27 @@ var tupu = new TUPU(secretId, privateKeyPath, options)
 
 #### 1. call TUPU API by urls
 ```js 
-tupu.byURLs(urls, cb) → {*}
+tupu.byURLs(urls, tags, cb) → {*}
 ```
 - `urls`		[ 'http://sample.com/path/image.png', 'http://sample.com/path/images.zip' ]
+- `tags`		[ 'tag1', 'tag2' ] tag of image (optional); string value as general tag for all urls; if count of tags is less than count of urls, the last tag will be used for the rest
 - `cb`		function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 #### 2. call TUPU API by POST Files
 ```js
-tupu.byFiles(files, cb) → {*}
+tupu.byFiles(files, tags, cb) → {*}
 ```
 - `files`		[ '/path/to/file1.jpg', '/path/to/file2.zip' ]
+- `tags`		[ 'tag1', 'tag2' ] tag of image (optional); string value as general tag for all files; if count of tags is less than count of files, the last tag will be used for the rest
 - `cb`    	function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 
 #### 3. call TUPU API by file streams
 ```js 
-tupu.byStreams(streams, cb) → {*}
+tupu.byStreams(streams, tags, cb) → {*}
 ```
 - `streams`		[ read stream1 , read stream2 ]
+- `tags`		[ 'tag1', 'tag2' ] tag of image (optional); string value as general tag for all streams; if count of tags is less than count of streams, the last tag will be used for the rest
 - `cb`    	function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 
