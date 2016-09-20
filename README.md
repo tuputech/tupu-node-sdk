@@ -1,23 +1,22 @@
 <a href="https://www.tuputech.com/">
-    <img src="https://www.tuputech.com/zh/images/brandpage/tuputech_logo_horizontal_black.png" alt="图普科技"
-         title="图普科技" align="right" />
+    <img src="https://www.tuputech.com/zh/images/brandpage/tuputech_logo_horizontal_black.png" alt="tuputech"
+         title="tuputech" align="right" />
 </a>
 
-## TUPU API 调用流程
+## TUPU NODE SDK USER GUIDE
 
-#### 1、install tupu-node-sdk
+#### 1、Install tupu-node-sdk
 ```bash
 npm install --save tupu-node-sdk
 ```
 
-#### 2、账户、公私钥
-- 请联系图普售前/客户支持，明确需求，以便申请账户、申请开通secretId；
-- 登录后，<a href="https://www.tuputech.com/account/cert">参考此说明</a>生成并上传公钥；
+#### 2、Account, Authorization Keys
+- Please contact our customer support, to specify your requirements, and apply account / secretId;
+- Affter logined, follow <a href="https://www.tuputech.com/account/cert"> these steps </a> to generate your authorization private / public keys.
 
+#### 3、SDK Examples
 
-#### 3、sdk 调用示例
-
-```js 
+```js
 var secretId = 'you_secretId'
 var domain = 'api.open.tuputech.com'
 var privateKeyPath = __dirname + '/my_private_key.pem'
@@ -28,7 +27,13 @@ var testUrls = [
     'http://sample.com/1469532933675594/953.jpg'
     , 'http://sample.com/1469534372014467/233.jpg'
 ]
-tupu.byURLs(testUrls, function (data) {
+
+var options = {
+	uid: 'you_uid'
+	, tag: ['tag-test', 'tag-test-2']
+}
+
+tupu.byURLs(testUrls, options, function (data) {
     console.log(data)
 })
 
@@ -37,13 +42,14 @@ var testFiles = [
     , '/Users/testImage/267.jpg'
 ]
 
-tupu.byFiles(testFiles, function (data) {
+tupu.byFiles(testFiles, options, function (data) {
     console.log(data)
 })
 
 ```
 
-## API 说明
+## API Documentation
+### Constructor
 #### construct a TUPU API instance
 ```js
 var tupu = new TUPU(secretId, privateKeyPath, options)
@@ -58,25 +64,31 @@ var tupu = new TUPU(secretId, privateKeyPath, options)
 ### Methods
 
 #### 1. call TUPU API by urls
-```js 
-tupu.byURLs(urls, cb) → {*}
+```js
+tupu.byURLs(urls, options, cb) → {*}
 ```
 - `urls`		[ 'http://sample.com/path/image.png', 'http://sample.com/path/images.zip' ]
+- `options` <strong>[optional]</strong>, {tag: Array | String, uid: String}
 - `cb`		function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 #### 2. call TUPU API by POST Files
 ```js
-tupu.byFiles(files, cb) → {*}
+tupu.byFiles(files, options, cb) → {*}
 ```
 - `files`		[ '/path/to/file1.jpg', '/path/to/file2.zip' ]
+- `options` <strong>[optional]</strong>, {tag: Array | String, uid: String}
 - `cb`    	function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 
-#### 3. call TUPU API by file streams
-```js 
-tupu.byStreams(streams, cb) → {*}
+#### 3. call TUPU API by readable streams
+```js
+tupu.byStreams(streams, options, cb) → {*}
 ```
 - `streams`		[ read stream1 , read stream2 ]
+- `options` <strong>[optional]</strong>, {tag: Array | String, uid: String}
 - `cb`    	function(data) 'data' is a json, detail specification can be found [here.](#https://www.tuputech.com/api/info)
 
 
+
+## License
+[MIT](http://www.opensource.org/licenses/mit-license.php)
