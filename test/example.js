@@ -13,14 +13,15 @@ var testUrls = [
     'http://oper14.img.ingkee.com/1469532933675594/953.jpg'
     , 'http://oper7.img.ingkee.com/1469534372014467/233.jpg'
 ]
+
 var options =  {uid: 'your-uid', tag: ['tag-test','tag-test-2']}
 tupu.byURLs(testUrls, options, function (data) {
     console.log(data)
 })
 
 var testFiles = [
-    '/Users/zouyixiong/testImage/WD-test/266.jpg'
-    , '/Users/zouyixiong/testImage/WD-test/99.jpg'
+    '/Users/air/Desktop/70-1.png'
+    , '/Users/air/Desktop/70-2.png'
 ]
 tupu.byFiles(testFiles, options, function (data) {
     console.log(data)
@@ -28,8 +29,8 @@ tupu.byFiles(testFiles, options, function (data) {
 
 var fs = require('fs')
 var testStreams = [
-    fs.createReadStream('/Users/zouyixiong/testImage/WD-test/946.jpg')
-    , fs.createReadStream('/Users/zouyixiong/testImage/WD-test/99328470.png')
+    fs.createReadStream('/Users/air/Desktop/70-1.png')
+    , fs.createReadStream('/Users/air/Desktop/70-2.png')
 ]
 
 tupu.byStreams(testStreams, options, function (data) {
