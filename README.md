@@ -120,7 +120,7 @@ tupu.videoAsyncByUrl(url, options, cb) → {*}
 ```
 - `url`		'http://sample.com/path/video.mp4'
 - `options` {customInfo: Object | interval: Number | callbackUrl: String | callbackRules: Object | realTimeCallback: Boolean}
-- `cb`		function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/video/asyncscan/)
+- `cb`		function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/video/asyncscan/#1)
 
 #### 5. call TUPU Video Stream API by url
 ```js
@@ -128,14 +128,14 @@ tupu.videoStreamByUrl(url, options, cb) → {*}
 ```
 - `url`		'rtmp://sample.com/path/stream'
 - `options` {customInfo: Object | interval: Number | callbackUrl: String | callbackRules: Object}
-- `cb`		function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/video/asyncscan/)
+- `cb`		function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/video/asyncscan/#2)
 
 #### 6. call TUPU Video Async/Stream Close API
 ```js
 tupu.videoClose(videoId, cb) → {*}
 ```
 - `videoId`	'5d4c074058b6cbdbfecaaea4'
-- `cb`		function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/video/asyncscan/)
+- `cb`		function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/video/asyncscan/#3)
 
 ## License
 [MIT](http://www.opensource.org/licenses/mit-license.php)
