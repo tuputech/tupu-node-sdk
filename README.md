@@ -12,41 +12,12 @@ npm install --save tupu-node-sdk
 
 #### 2、Account, Authorization Keys
 - Please contact our customer support, to specify your requirements, and apply account / secretId;
-- Affter logined, follow <a href="https://console.cloud.tuputech.com/account/cert"> these steps </a> to generate your authorization private / public keys.
+- After logined, follow <a href="https://console.cloud.tuputech.com/account/cert"> these steps </a> to generate your authorization private / public keys.
 
 #### 3、SDK Examples
-
-```js
-var secretId = 'you_secretId'
-var domain = 'api.open.tuputech.com'
-var privateKeyPath = __dirname + '/my_private_key.pem'
-var TUPU = require('tupu-node-sdk')
-var tupu = new TUPU(secretId, privateKeyPath, { domain: domain, timeout: 10 * 1000 })
-
-var testUrls = [
-    'http://sample.com/1469532933675594/953.jpg'
-    , 'http://sample.com/1469534372014467/233.jpg'
-]
-
-var options = {
-	uid: 'you_uid'
-	, tag: ['tag-test', 'tag-test-2']
-}
-
-tupu.byURLs(testUrls, options, function (data) {
-    console.log(data)
-})
-
-var testFiles = [
-    '/Users/testImage/266.jpg'
-    , '/Users/testImage/267.jpg'
-]
-
-tupu.byFiles(testFiles, options, function (data) {
-    console.log(data)
-})
-
-```
+- test/image.test.js
+- test/text.test.js
+- test/video.test.js
 
 ## API Documentation
 ### Constructor
@@ -61,7 +32,7 @@ var tupu = new TUPU(secretId, privateKeyPath, options)
                 domain: 'api.open.tuputech.com' # contact us for the other valid values
             }
 
-### Methods
+### Image Methods
 
 #### 1. call TUPU API by urls
 ```js
@@ -79,7 +50,6 @@ tupu.byFiles(files, options, cb) → {*}
 - `options` <strong>[optional]</strong>, {tag: Array | String, uid: String}
 - `cb`    	function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/image/)
 
-
 #### 3. call TUPU API by readable streams
 ```js
 tupu.byStreams(streams, options, cb) → {*}
@@ -87,6 +57,17 @@ tupu.byStreams(streams, options, cb) → {*}
 - `streams`		[ read stream1 , read stream2 ]
 - `options` <strong>[optional]</strong>, {tag: Array | String, uid: String}
 - `cb`    	function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/image/)
+
+
+### Text Methods
+
+#### call TUPU API by texts
+```js
+tupu.byTexts(texts, options, cb) → {*}
+```
+- `texts`		[ {content: 'some text', contentId: 'your_contentId', ...others}]
+- `cb`		function(data) 'data' is a json, detail specification can be found [here.](http://cloud.doc.tuputech.com/API/text/textAnalysis.html)
+
 
 ### Video Methods
 
