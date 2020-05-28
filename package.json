@@ -1,6 +1,6 @@
 {
   "name": "tupu-node-sdk",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "node.js API sdk for api.open.tuputech.com ",
   "main": "lib/index.js",
   "scripts": {
